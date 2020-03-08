@@ -1,0 +1,83 @@
+			  .     .  .      +     .      .          .
+		     .       .      .     #       .           .
+			.      .         ###            .      .      .
+		      .      .   "#:. .:##"##:. .:#"  .      .
+			  .      . "####"###"####"  .
+		       .     "#:.    .:#"###"#:.    .:#"  .        .       .
+		  .             "#########"#########"        .        .
+			.    "#:.  "####"###"####"  .:#"   .       .
+		     .     .  "#######""##"##""#######"                  .
+				."##"#####"#####"##"           .      .
+		    .   "#:. ...  .:##"###"###"##:.  ... .:#"     .
+		      .     "#######"##"#####"##"#######"      .     .
+		    .    .     "#####""#######""#####"    .      .
+			    .     "      000      "    .     .
+		       .         .   .   000     .        .       .
+		.. .. ..................O000O........................ ...... ...
+
+				      HOMEWORK1
+
+Name: Livadaru Alexandru-Valentin
+Group: 323CA
+
+
+	MAIN
+
+- Push on the stack the starting point (root).
+- Call traverse_tree function
+- Remake the stack
+
+- Push the vector of elements obtained from the tree on the stack 
+- Call show_result function
+- Remake the stack
+
+	TRAVERSE_TREE
+
+- Save the framework on the stack
+
+- Push the node on the stack so we can know where to go back
+
+- Dereference untill we find the "core" and compare it to the given operands
+
+- If the "core" is a number, call atoi so we can convert it to Integer
+- Retain the value of ecx on the stack
+- Save the number in the traverse_result vector
+- Increment the size operand
+- The value of ecx is rebuilded using pop
+
+- If the value is a sign, make the same thing as above
+- We now store a sign, not a number
+
+- Go on the left child then push the parameter on the stack.
+- Make the recursive call than update the ebx value
+
+- Make the same thing but for the right child
+
+-Remake the stack and leave
+
+	ATOI
+
+- Save the framework
+
+- Save the pointer of the "core" in the ebx register
+- Set the sign flag to 0 (false)
+
+- Check if the number is signed and if it is, set the flag
+
+- Compare the first byte with the 0 value so we can know ehere to stop
+- Substract the ASCII value of the character in order to convert it to Iteger
+- Multiply the final result by 10
+- Convert dl to edx
+- If the sign flag is set, multiply the result by 0 then leave.
+
+	SHOW_RESULT
+
+- Save the elements number in ecx
+
+- Check if it is the last element (compare to 0)
+- Check if the element is a sign
+- If not push the value on the stack
+
+- If it is a sign, remove the last two numbers from the stack
+- Make the specific operation then push the new result on the stack
+- Print the last element remained on the stack (the final result) 
